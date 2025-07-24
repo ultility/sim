@@ -1,0 +1,6 @@
+add_executable(${PROJECT_NAME} main.cpp)
+target_link_libraries(${PROJECT_NAME} flecs::flecs_static)
+add_library(ImGui imgui.cpp imgui_impl_sdl3.cpp imgui_impl_sdlrenderer3.cpp imgui_draw.cpp imgui_widgets.cpp imgui_tables.cpp imgui_demo.cpp)
+target_link_libraries(ImGui SDL3)
+target_link_libraries(${PROJECT_NAME} ImGui)
+set(EXECUTABLE_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/bin)
